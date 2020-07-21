@@ -1,6 +1,10 @@
 <template>
   <div v-bind:class="{ 'completed': todo.completed }" class="display">
-    <p v-on:click="markComplete">{{ todo.title }}</p>
+    <p class="title"
+      contenteditable="true"
+      v-on:keydown.enter="updateTask($event, todo)"
+      v-on:blur="updateTask($event, todo)"
+      v-bind:class="{completed: todo.isComplete}">{{ todo.title }}</p>
     <button @click="$emit('delete-todo', todo.id)" class="x-btn"><x-icon size="1.5x" class="custom-class"></x-icon></button>
   </div>
 </template>
@@ -17,9 +21,14 @@
       XIcon
     },
     methods: {
-      markComplete() {
-        this.todo.completed = !this.todo.completed
+      updateTask: function(e, todo){
+        e.preventDefault();
+        todo.title = e.target.innerText;
+        e.target.blur();
       }
+    },
+    created() {
+      console.log(this.todo)
     }
   }
 </script>
