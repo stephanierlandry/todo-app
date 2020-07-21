@@ -2,7 +2,7 @@
   <div id="app">
     <div class="md-layout">
       <div class="md-layout-item"></div>
-      <div class="md-layout-item md-size-75">
+      <div class="md-layout-item md-size-75 todo-container">
         <md-card>
           <md-card-content>
               <md-card-header>
@@ -72,8 +72,29 @@
 
 <style  scoped>
 
-  .md-card{
-  width:100%;
+  #app{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+
   }
+
+  .todo-container{
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  .md-card{
+    width: 100%;
+  }
+
+  h1{
+    font-size: 5em;
+    text-align: center;
+    font-weight: 100;
+  }
+
 
 </style>
