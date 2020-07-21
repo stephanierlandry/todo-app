@@ -40,6 +40,7 @@
 
   p:hover{
     cursor:pointer;
+    background-color:#FCFBE4;
   }
 
   .completed {
