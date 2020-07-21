@@ -94,6 +94,7 @@
     font-size: 5em;
     text-align: center;
     font-weight: 100;
+    color:#BE2E14;
   }
 
 

@@ -1,5 +1,6 @@
 <template>
   <div v-bind:class="{ 'completed': todo.completed }" class="display">
+    <input type="checkbox" v-on:change="completeTask(todo)" v-bind:checked="todo.isComplete"/>
     <p class="title"
       contenteditable="true"
       v-on:keydown.enter="updateTask($event, todo)"
@@ -25,7 +26,10 @@
         e.preventDefault();
         todo.title = e.target.innerText;
         e.target.blur();
-      }
+      },
+      completeTask: function(todo){
+         todo.isComplete = !todo.isComplete;
+       }
     },
     created() {
       console.log(this.todo)
@@ -34,6 +38,7 @@
 </script>
 
 <style scoped>
+
   p{
     font-size: 1.5em;
   }
@@ -51,17 +56,21 @@
     display:flex;
   }
 
+  input{
+    margin:1.75em 2em 1.5em 0em
+  }
+  
   .x-btn{
-  background:none;
-  border:none;
-  font-weight: bold;
-  color: red;
-  font-size: 1em;
-  margin-left: 1em;
+    background:none;
+    border:none;
+    font-weight: bold;
+    color: red;
+    font-size: 1em;
+    margin-left: 1em;
   }
 
   .x-btn:hover{
-  cursor:pointer;
-  color: #A50909;
+    cursor:pointer;
+    color: #A50909;
   }
 </style>
