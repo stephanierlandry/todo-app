@@ -40,9 +40,9 @@
 
 <style scoped>
 
-
   .add-bar{
     width:75%;
+    height: 2em;
   }
 
   .add-btn{
