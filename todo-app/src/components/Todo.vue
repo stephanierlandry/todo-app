@@ -1,7 +1,7 @@
 <template>
-  <div v-bind:class="{ 'completed': todo.completed }">
+  <div v-bind:class="{ 'completed': todo.completed }" class="display">
     <p v-on:click="markComplete">{{ todo.title }}</p>
-    <button @click="$emit('delete-todo', todo.id)">X</button>
+    <button @click="$emit('delete-todo', todo.id)" class="x-btn">X</button>
   </div>
 </template>
 
@@ -22,5 +22,19 @@ export default {
 <style scoped>
   .completed {
     text-decoration: line-through;
+  }
+
+  .display{
+    display:flex;
+  }
+
+  .x-btn{
+  background:none;
+  border:none;
+  font-weight: bold;
+  }
+
+  .x-btn:hover{
+  cursor:pointer;
   }
 </style>
