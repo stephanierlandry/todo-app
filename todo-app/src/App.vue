@@ -1,8 +1,20 @@
 <template>
   <div id="app">
-    <h1>todo</h1>
-    <AddTodo v-on:add-todo="addTodo"/>
-    <Todos v-bind:todos="todos" v-on:delete-todo="deleteTodo"/>
+    <div class="md-layout">
+      <div class="md-layout-item"></div>
+      <div class="md-layout-item md-size-75 todo-container">
+        <md-card>
+          <md-card-content>
+              <md-card-header>
+                <h1>todo</h1>
+              </md-card-header>
+              <AddTodo v-on:add-todo="addTodo"/>
+              <Todos v-bind:todos="todos" v-on:delete-todo="deleteTodo"/>
+          </md-card-content>
+        </md-card>
+      </div>
+      <div class="md-layout-item"></div>
+    </div>
   </div>
 </template>
 
@@ -58,5 +70,31 @@
   }
 </script>
 
-<style>
+<style  scoped>
+
+  #app{
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  color: #2c3e50;
+
+  }
+
+  .todo-container{
+    margin-top: 2em;
+    text-align: center;
+  }
+
+  .md-card{
+    width: 100%;
+  }
+
+  h1{
+    font-size: 5em;
+    text-align: center;
+    font-weight: 100;
+  }
+
+
 </style>

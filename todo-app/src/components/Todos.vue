@@ -1,10 +1,12 @@
 <template>
   <div>
-    <ul>
-      <li v-bind:key="todo.id" v-for="todo in todos">
-        <Todo v-bind:todo="todo" v-on:delete-todo="$emit('delete-todo', todo.id)"/>
-      </li>
-    </ul>
+    <div class="todo-items-container">
+      <ul>
+        <li v-bind:key="todo.id" v-for="todo in todos">
+          <Todo v-bind:todo="todo" v-on:delete-todo="$emit('delete-todo', todo.id)"/>
+        </li>
+      </ul>
+    </div>
   </div>
 </template>
 
@@ -22,4 +24,17 @@
 </script>
 
 <style scoped>
+
+ul{
+  list-style: none;
+  display: inline-block;
+}
+
+.display{
+  display:flex;
+}
+
+.row{
+  flex-direction:row;
+}
 </style>
