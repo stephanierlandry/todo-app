@@ -59,7 +59,7 @@
   input{
     margin:1.75em 2em 1.5em 0em
   }
-  
+
   .x-btn{
     background:none;
     border:none;
